@@ -49,15 +49,25 @@ defineProps({
   overflow: hidden;
   max-width: 307px;
   cursor: pointer;
+  &:hover {
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
+    .card-image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
 
   .card-image {
     position: relative;
+    background: #0304050a;
+    padding: 16px;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: #0304050a;
+      transition: transform 0.5s ease;
     }
     &-tags {
       position: absolute;

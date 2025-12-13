@@ -217,9 +217,16 @@ const addToCart = item => {
             align-items: center;
             justify-content: center;
             padding: 12px 8px;
+            cursor: pointer;
+            &:hover {
+              img {
+                transform: scale(1.1);
+              }
+            }
             img {
               max-width: 88px;
               padding: 12px;
+              transition: transform 0.5s ease;
             }
           }
           &-title {
@@ -315,7 +322,7 @@ const addToCart = item => {
     &-all {
       display: flex;
       justify-content: center;
-      
+
       a {
         border: 1px solid #22242a;
         display: flex;
