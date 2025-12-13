@@ -190,7 +190,7 @@ const addToCart = item => {
       font-weight: 500;
       font-style: Medium;
       font-size: 13px;
-      leading-trim: NONE;
+      
       line-height: 16px;
       letter-spacing: -1%;
       color: #22242a;
@@ -211,7 +211,7 @@ const addToCart = item => {
       font-weight: 400;
       font-style: Regular;
       font-size: 32px;
-      leading-trim: NONE;
+      
       line-height: 120%;
       letter-spacing: 0%;
       margin: 0;

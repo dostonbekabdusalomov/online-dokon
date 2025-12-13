@@ -113,7 +113,7 @@ const prevSlide = () => {
     font-weight: 400;
     font-style: Regular;
     font-size: 32px;
-    leading-trim: NONE;
+    
     line-height: 120%;
     letter-spacing: 0%;
     color: #22242a;
@@ -179,7 +179,7 @@ const prevSlide = () => {
         font-weight: 400;
         font-style: Regular;
         font-size: 18px;
-        leading-trim: NONE;
+        
         line-height: 120%;
         letter-spacing: 0%;
         color: #22242a;
@@ -191,7 +191,7 @@ const prevSlide = () => {
         font-weight: 400;
         font-style: Regular;
         font-size: 14px;
-        leading-trim: NONE;
+        
         line-height: 20px;
         letter-spacing: 0%;
         color: #22242a;
@@ -211,7 +211,7 @@ const prevSlide = () => {
           font-weight: 600;
           font-style: Semi Bold;
           font-size: 12px;
-          leading-trim: NONE;
+          
           line-height: 16px;
           letter-spacing: 0%;
           color: #22242a;

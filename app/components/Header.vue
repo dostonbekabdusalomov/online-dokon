@@ -4,7 +4,7 @@
       Midseason Sale: 20% Off — Auto Applied at Checkout — Limited Time Only
     </div>
 
-    <div class="mid-bar">
+    <div class="mid-bar" :class="{ sticky: isSticky }">
       <div class="mid-inner-nav container-header">
         <div class="right">
           <div class="menu-bar">
@@ -62,48 +62,50 @@
           </div>
         </div>
       </div>
-      <div class="mid-inner container-header">
-        <div class="left">
-          <img src="../assets/images/logo.jpg" alt="logo" class="logo" />
+      <div class="mid-inner">
+        <div class="container-header">
+          <div class="left">
+            <img src="../assets/images/logo.jpg" alt="logo" class="logo" />
 
-          <button class="catalog-btn">
-            <span class="icon"><Icon name="grid" /></span>
-            <p>КАТАЛОГ</p>
-          </button>
-        </div>
-
-        <div class="search-box">
-          <input type="text" placeholder="Поиск по товарам" />
-          <button class="search-btn"><Icon name="search" /></button>
-        </div>
-
-        <div class="right">
-          <div class="icons">
-            <div class="item">
-              <Icon name="heart" />
-              <span>Избранное</span
-              ><span v-if="wishlist.wishListCount > 0" class="cart-wishlist">
-                {{ wishlist.wishListCount }}
-              </span>
-            </div>
-
-            <div class="item">
-              <Icon name="user" />
-              <span>Войти</span>
-            </div>
-
-            <div class="item item-cart">
-              <Icon name="cart" />
-              <span>Корзина</span>
-
-              <span v-if="cart.cartCount > 0" class="cart-badge">
-                {{ cart.cartCount }}
-              </span>
-            </div>
+            <button class="catalog-btn">
+              <span class="icon"><Icon name="grid" /></span>
+              <p>КАТАЛОГ</p>
+            </button>
           </div>
 
-          <!-- <button @click="addToCart">Add item to cart</button>
+          <div class="search-box">
+            <input type="text" placeholder="Поиск по товарам" />
+            <button class="search-btn"><Icon name="search" /></button>
+          </div>
+
+          <div class="right">
+            <div class="icons">
+              <div class="item">
+                <Icon name="heart" />
+                <span>Избранное</span
+                ><span v-if="wishlist.wishListCount > 0" class="cart-wishlist">
+                  {{ wishlist.wishListCount }}
+                </span>
+              </div>
+
+              <div class="item">
+                <Icon name="user" />
+                <span>Войти</span>
+              </div>
+
+              <div class="item item-cart">
+                <Icon name="cart" />
+                <span>Корзина</span>
+
+                <span v-if="cart.cartCount > 0" class="cart-badge">
+                  {{ cart.cartCount }}
+                </span>
+              </div>
+            </div>
+
+            <!-- <button @click="addToCart">Add item to cart</button>
           <button @click="clearCart">Clear cart</button> -->
+          </div>
         </div>
       </div>
     </div>
@@ -117,10 +119,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useCartStore } from '../../stores/cart'
 import { useWishlistStore } from '../../stores/wishlist.js'
 import { useRouter } from 'vue-router'
+import Icon from '../components/Icon.vue' // sizning Icon component pathingizga qarab
+
 const menuItems = ref([
   { title: 'Про нас', link: '/' },
   { title: 'Блог', link: '/' },
@@ -134,6 +138,22 @@ const menuItems = ref([
     ]
   }
 ])
+
+const isSticky = ref(false)
+
+const handleScroll = () => {
+  const topInfoHeight = document.querySelector('.top-info')?.offsetHeight || 0
+  isSticky.value = window.scrollY > topInfoHeight
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
 const categories = ref([
   'Акции',
   'Новинки',
@@ -144,34 +164,14 @@ const categories = ref([
   'Медицинские товары',
   'IT и Электроника'
 ])
-const cartCount = ref(0)
-const wishListCount = ref(0)
+
 const cart = useCartStore()
 const wishlist = useWishlistStore()
-const addToCart = () => {
-  cartCount.value += 1
-}
 
-const clearCart = () => {
-  cartCount.value = 0
-}
-
-const addToWishList = () => {
-  wishListCount.value += 1
-}
-
-const clearWishList = () => {
-  wishListCount.value = 0
-}
 const openIndex = ref(null)
+const openDropdown = index => (openIndex.value = index)
+const closeDropdown = () => (openIndex.value = null)
 
-const openDropdown = index => {
-  openIndex.value = index
-}
-
-const closeDropdown = () => {
-  openIndex.value = null
-}
 const selectedLang = ref('Uz')
 const selectedCur = ref('Сум')
 
@@ -185,7 +185,6 @@ const selectLang = lang => {
   selectedLang.value = lang
   openLang.value = false
 }
-
 const selectCur = cur => {
   selectedCur.value = cur
   openCur.value = false
@@ -195,7 +194,6 @@ const langMouseEnter = () => {
   clearTimeout(langTimeout)
   openLang.value = true
 }
-
 const langMouseLeave = () => {
   langTimeout = setTimeout(() => {
     openLang.value = false
@@ -206,7 +204,6 @@ const curMouseEnter = () => {
   clearTimeout(curTimeout)
   openCur.value = true
 }
-
 const curMouseLeave = () => {
   curTimeout = setTimeout(() => {
     openCur.value = false

@@ -18,9 +18,7 @@
                   <div class="construction-wrapper-inner-category-card-img">
                     <img :src="k.img" alt="" />
                   </div>
-                  <div
-                    class="construction-wrapper-inner-category-card-title"
-                  >
+                  <div class="construction-wrapper-inner-category-card-title">
                     <p>{{ k.title }}</p>
                   </div>
                 </nuxt-link>
@@ -46,7 +44,7 @@
             />
           </div>
           <div class="pagination-wrapper">
-            <button @click="prevSlide" :disabled="currentPage === 0">
+            <button @click="prevSlide">
               <Icon name="left-arrow" />
             </button>
 
@@ -176,7 +174,7 @@ const addToCart = item => {
           font-weight: 400;
           font-style: Regular;
           font-size: 32px;
-          leading-trim: NONE;
+          
           line-height: 120%;
           letter-spacing: 0%;
           color: #22242a;
@@ -187,7 +185,7 @@ const addToCart = item => {
           font-weight: 400;
           font-style: Regular;
           font-size: 14px;
-          leading-trim: NONE;
+          
           line-height: 20px;
           letter-spacing: 0%;
           color: #22242a;
@@ -220,7 +218,7 @@ const addToCart = item => {
             cursor: pointer;
             &:hover {
               img {
-                transform: scale(1.1);
+                transform: scale(1.2);
               }
             }
             img {
@@ -235,7 +233,7 @@ const addToCart = item => {
               font-weight: 600;
               font-style: Semi Bold;
               font-size: 11px;
-              leading-trim: NONE;
+              
               line-height: 16px;
               letter-spacing: 2%;
               text-align: center;
@@ -259,7 +257,7 @@ const addToCart = item => {
               font-weight: 600;
               font-style: Semi Bold;
               font-size: 12px;
-              leading-trim: NONE;
+              
               line-height: 16px;
               letter-spacing: 0%;
               margin: 0;
@@ -338,7 +336,7 @@ const addToCart = item => {
           font-weight: 600;
           font-style: Semi Bold;
           font-size: 14px;
-          leading-trim: NONE;
+          
           line-height: 20px;
           letter-spacing: 0%;
           margin: 0;

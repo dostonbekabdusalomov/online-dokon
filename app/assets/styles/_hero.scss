@@ -1,7 +1,7 @@
 .hero {
   background: #f4f5f6;
 
-  padding-top: 214px !important;
+  // padding-top: 214px !important;
 
   &-wrapper {
     display: flex;
@@ -82,7 +82,7 @@
           font-weight: 400;
           font-style: Regular;
           font-size: 56px;
-          leading-trim: NONE;
+          
           line-height: 100%;
           letter-spacing: 0%;
           color: #fff;
@@ -94,7 +94,7 @@
           font-weight: 400;
           font-style: Regular;
           font-size: 18px;
-          leading-trim: NONE;
+          
           line-height: 140%;
           letter-spacing: -2%;
           color: #bebebe;
@@ -113,7 +113,7 @@
           font-weight: 500;
           font-style: Medium;
           font-size: 44px;
-          leading-trim: NONE;
+          
           font-family: 'Bounded', sans-serif;
           line-height: 120%;
           letter-spacing: 0%;
@@ -128,7 +128,7 @@
           font-weight: 400;
           font-style: Regular;
           font-size: 12px;
-          leading-trim: NONE;
+          
           line-height: 120%;
           letter-spacing: 0%;
           text-transform: uppercase;
@@ -158,7 +158,7 @@
         font-weight: 400;
         font-style: Regular;
         font-size: 18px;
-        leading-trim: NONE;
+        
         line-height: 120%;
         letter-spacing: 0%;
         color: #22242a;
@@ -190,7 +190,7 @@
           font-weight: 500;
           font-style: Medium;
           font-size: 11px;
-          leading-trim: NONE;
+          
           line-height: 16px;
           letter-spacing: 0%;
           color: #848688;
@@ -204,7 +204,7 @@
           font-weight: 400;
           font-style: Regular;
           font-size: 14px;
-          leading-trim: NONE;
+          
           line-height: 20px;
           letter-spacing: -1%;
           color: #22242a;
@@ -223,7 +223,7 @@
             font-weight: 500;
             font-style: Medium;
             font-size: 12px;
-            leading-trim: NONE;
+            
             line-height: 16px;
             letter-spacing: 0%;
             text-decoration: line-through;
@@ -237,7 +237,7 @@
             font-weight: 600;
             font-style: Semi Bold;
             font-size: 11px;
-            leading-trim: NONE;
+            
             line-height: 16px;
             letter-spacing: -4%;
             text-transform: uppercase;
@@ -251,7 +251,7 @@
           font-weight: 600;
           font-style: Semi Bold;
           font-size: 18px;
-          leading-trim: NONE;
+          
           line-height: 24px;
           letter-spacing: -2%;
           color: #22242a;
@@ -266,7 +266,7 @@
           font-weight: 600;
           font-style: Semi Bold;
           font-size: 14px;
-          leading-trim: NONE;
+          
           line-height: 20px;
           letter-spacing: 0%;
           display: flex;

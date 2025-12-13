@@ -18,7 +18,7 @@
         cursor: pointer;
         &:hover {
           img {
-            transform: scale(1.1);
+            transform: scale(1.2);
           }
         }
         .category-card-img {
@@ -38,7 +38,7 @@
             font-weight: 600;
             font-style: Semi Bold;
             font-size: 11px;
-            leading-trim: NONE;
+            
             line-height: 16px;
             letter-spacing: 1%;
             text-align: center;

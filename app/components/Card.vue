@@ -67,10 +67,17 @@ const wishlist = useWishlistStore()
   transition: transform 0.5s ease;
   &:hover {
     box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
-    transform: scale(1.05);
+    transform: scale(1.03);
+    .card-info .card-price button {
+      background: #feeb27;
+    }
     .card-image {
+      transform: scale(0.97);
       img {
-        transform: scale(1.05);
+        transform: scale(1.1);
+      }
+      .wishlist-btn {
+        display: flex;
       }
     }
   }
@@ -78,18 +85,20 @@ const wishlist = useWishlistStore()
   .card-image {
     position: relative;
     background: #0304050a;
-    margin: 16px;
     border-radius: 8px;
+    transition: transform 0.5s ease;
+    padding: 16px;
     .wishlist-btn {
       position: absolute;
+      display: none;
       top: 10px;
+      transition: all 0.5s ease;
       right: 10px;
       background: #fff;
       border: none;
       border-radius: 8px;
       width: 32px;
       height: 32px;
-      display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -122,7 +131,7 @@ const wishlist = useWishlistStore()
         font-weight: 600;
         font-style: Semi Bold;
         font-size: 11px;
-        leading-trim: NONE;
+
         line-height: 16px;
         letter-spacing: -4%;
         text-transform: uppercase;
@@ -177,6 +186,7 @@ const wishlist = useWishlistStore()
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all 0.5s ease;
       }
     }
   }
@@ -192,7 +202,7 @@ const wishlist = useWishlistStore()
       font-weight: 500;
       font-style: Medium;
       font-size: 11px;
-      leading-trim: NONE;
+
       line-height: 16px;
       letter-spacing: 0%;
       color: #848688;
@@ -205,7 +215,7 @@ const wishlist = useWishlistStore()
       font-weight: 400;
       font-style: Regular;
       font-size: 14px;
-      leading-trim: NONE;
+
       line-height: 20px;
       letter-spacing: 0%;
       color: #22242a;
@@ -223,7 +233,7 @@ const wishlist = useWishlistStore()
         font-weight: 500;
         font-style: Medium;
         font-size: 12px;
-        leading-trim: NONE;
+
         line-height: 16px;
         letter-spacing: 0%;
         text-decoration: line-through;
@@ -237,7 +247,7 @@ const wishlist = useWishlistStore()
         font-weight: 600;
         font-style: Semi Bold;
         font-size: 11px;
-        leading-trim: NONE;
+
         line-height: 16px;
         letter-spacing: -4%;
         text-transform: uppercase;
@@ -251,7 +261,7 @@ const wishlist = useWishlistStore()
       font-weight: 600;
       font-style: Semi Bold;
       font-size: 16px;
-      leading-trim: NONE;
+
       line-height: 20px;
       letter-spacing: -2%;
 
