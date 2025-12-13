@@ -58,6 +58,7 @@ const tabs = {
     items: [
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 1,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',
@@ -68,6 +69,7 @@ const tabs = {
       },
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 2,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',
@@ -76,6 +78,7 @@ const tabs = {
       },
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 3,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',
@@ -86,6 +89,7 @@ const tabs = {
       },
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 4,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',
@@ -94,6 +98,7 @@ const tabs = {
       },
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 5,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',
@@ -102,6 +107,7 @@ const tabs = {
       },
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 6,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',
@@ -112,6 +118,7 @@ const tabs = {
       },
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 7,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',
@@ -125,6 +132,7 @@ const tabs = {
     items: [
       {
         title: 'Генератор бензиновый Denzel PS-33',
+        id: 8,
         price: '4 399 000 сум',
         img: img,
         minOrder: 'мин. заказ 100 шт',

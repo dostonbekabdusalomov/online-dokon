@@ -1,5 +1,8 @@
 .hero {
   background: #f4f5f6;
+
+  padding-top: 214px !important;
+
   &-wrapper {
     display: flex;
     align-items: center;
@@ -28,7 +31,7 @@
     &-banner {
       position: relative;
       cursor: pointer;
-      height: 52vh;
+      height: 450px;
       overflow: hidden;
       border-radius: 12px;
       &:hover {
@@ -136,7 +139,7 @@
     }
     &-right {
       width: 30%;
-      height: 52vh;
+      height: 450px;
       background: #fff;
       border-radius: 12px;
       border: 1px solid #00000033;

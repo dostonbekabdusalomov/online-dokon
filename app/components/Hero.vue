@@ -89,12 +89,12 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { useCartStore } from '../../stores/cart.js'
 
+const cart = useCartStore()
 import heroBack from '../assets/images/heroback.png'
 import cardImg from '../assets/images/herocard.png'
 
 import Icon from '~/components/Icon.vue'
 
-const cart = useCartStore()
 const heroSlides = [
   {
     img: heroBack,

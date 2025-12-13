@@ -2,6 +2,15 @@
   <div class="card">
     <div class="card-image">
       <img :src="item.img" alt="" />
+      <button class="wishlist-btn" @click.stop="wishlist.toggleWishlist(item)">
+        <Icon
+          :key="wishlist.isInWishlist(item.id)"
+          :name="
+            wishlist.isInWishlist(item.id) ? 'wishlist-active' : 'wishlist'
+          "
+          :class="{ active: wishlist.isInWishlist(item.id) }"
+        />
+      </button>
       <div class="card-image-tags">
         <span v-if="item.hit" class="badge hit">Хит продаж</span>
         <span v-if="item.bestPrice" class="badge best-price">Лучшая Цена</span>
@@ -29,7 +38,7 @@
           </div>
           <p class="new-price">{{ item.price }}</p>
         </div>
-        <button @click="$emit('add-to-cart', item)">
+        <button @click="cart.addToCart(product)">
           <Icon name="cart1" />
         </button>
       </div>
@@ -41,6 +50,12 @@
 defineProps({
   item: { type: Object, required: true }
 })
+import { useCartStore } from '../../stores/cart.js'
+import { useWishlistStore } from '../../stores/wishlist.js'
+
+const cart = useCartStore()
+
+const wishlist = useWishlistStore()
 </script>
 
 <style lang="scss" scoped>
@@ -49,8 +64,10 @@ defineProps({
   overflow: hidden;
   max-width: 307px;
   cursor: pointer;
+  transition: transform 0.5s ease;
   &:hover {
     box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
     .card-image {
       img {
         transform: scale(1.05);
@@ -61,7 +78,27 @@ defineProps({
   .card-image {
     position: relative;
     background: #0304050a;
-    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    .wishlist-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #fff;
+      border: none;
+      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
 
     img {
       width: 100%;
@@ -71,8 +108,8 @@ defineProps({
     }
     &-tags {
       position: absolute;
-      top: 8px;
-      left: 8px;
+      top: 10px;
+      left: 10px;
       display: flex;
       align-items: start;
       flex-direction: column;

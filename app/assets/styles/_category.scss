@@ -5,6 +5,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
+
       a {
         background: #f4f5f6;
         border-radius: 8px;
@@ -14,6 +15,12 @@
         justify-content: center;
         gap: 10px;
         width: 100%;
+        cursor: pointer;
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
         .category-card-img {
           max-width: 88px;
           padding: 16px;
@@ -22,6 +29,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: transform 0.5s ease;
           }
         }
         .category-card-title {

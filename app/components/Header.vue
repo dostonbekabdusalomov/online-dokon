@@ -81,7 +81,10 @@
           <div class="icons">
             <div class="item">
               <Icon name="heart" />
-              <span>Избранное</span>
+              <span>Избранное</span
+              ><span v-if="wishlist.wishListCount > 0" class="cart-wishlist">
+                {{ wishlist.wishListCount }}
+              </span>
             </div>
 
             <div class="item">
@@ -116,6 +119,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useCartStore } from '../../stores/cart'
+import { useWishlistStore } from '../../stores/wishlist.js'
 import { useRouter } from 'vue-router'
 const menuItems = ref([
   { title: 'Про нас', link: '/' },
@@ -141,13 +145,23 @@ const categories = ref([
   'IT и Электроника'
 ])
 const cartCount = ref(0)
+const wishListCount = ref(0)
 const cart = useCartStore()
+const wishlist = useWishlistStore()
 const addToCart = () => {
   cartCount.value += 1
 }
 
 const clearCart = () => {
   cartCount.value = 0
+}
+
+const addToWishList = () => {
+  wishListCount.value += 1
+}
+
+const clearWishList = () => {
+  wishListCount.value = 0
 }
 const openIndex = ref(null)
 
