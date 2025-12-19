@@ -3,12 +3,15 @@
   <Category />
   <Especially />
   <SpecialOffers />
-  <GroceryProducts />
+  <!-- <Section /> -->
   <Construction />
   <SoftIndustry />
   <EquipmentTechnology />
   <MedicalProducts />
   <TecnologyIT />
+  <Brands />
+  <Reviews />
+  <B2Binfo />
 </template>
 
 <script>

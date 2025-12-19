@@ -1,6 +1,7 @@
 @use 'header';
 @use 'hero';
 @use 'category';
+@use 'section';
 
 .container {
   max-width: 1600px;
@@ -19,7 +20,7 @@
     font-weight: 400;
     font-style: Regular;
     font-size: 18px;
-    
+
     line-height: 120%;
     letter-spacing: 0%;
     color: #22242a;
@@ -38,7 +39,7 @@
       font-weight: 600;
       font-style: Semi Bold;
       font-size: 12px;
-      
+
       line-height: 16px;
       letter-spacing: 0%;
       color: #22242a;
@@ -51,7 +52,33 @@
     }
   }
 }
+.btn-gl {
+  border: 1px solid #00000033;
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  p {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 12px;
 
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #22242a;
+    margin: 0;
+    padding-left: 12px;
+  }
+  img {
+    background-color: #feeb27;
+    border-radius: 8px;
+  }
+}
 .section {
   padding: 24px 0;
 }
